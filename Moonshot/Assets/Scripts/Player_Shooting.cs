@@ -1,9 +1,4 @@
-﻿using JetBrains.Annotations;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Unity.Mathematics;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Player_Shooting : MonoBehaviour
 {
@@ -22,5 +17,14 @@ public class Player_Shooting : MonoBehaviour
             anim.SetBool("isShooting", false);
         }
 
+         if (Input.GetButtonDown("Fire2") && isShooting == true)
+        {
+            Shoot();
+        }
+    }
+
+    public void Shoot()
+    {
+        //raycast
     }
 }
