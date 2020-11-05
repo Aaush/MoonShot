@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5579203607847869407}
   - component: {fileID: 2566402473742886359}
   - component: {fileID: -2998731125053002464}
-  - component: {fileID: -426684183674485025}
+  - component: {fileID: -1499608341551536234}
   m_Layer: 0
   m_Name: ichor
   m_TagString: Untagged
@@ -94,7 +94,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.040993214, y: -0.07227731}
@@ -125,13 +125,13 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-426684183674485025
+--- !u!114 &-1499608341551536234
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +140,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6868893290952434881}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d51166ed55a7e041942e2edf3d80ebb, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a3be30f5c73fda418526d8bc9cc34c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}

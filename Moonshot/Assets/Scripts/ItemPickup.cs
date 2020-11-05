@@ -12,10 +12,11 @@ public class ItemPickup : MonoBehaviour
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
     }
 
-    void OnTrigger2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
         {
+
             for (int i = 0; i < inventory.slots.Length; i++)
             {
                 if (inventory.isFull[i] == false)
