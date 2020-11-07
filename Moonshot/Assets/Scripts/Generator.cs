@@ -8,10 +8,11 @@ public class Generator : MonoBehaviour
     public float currentPower;
 
     public float distToPlayer;
-    public float Ichor;
+
+    public GameObject Player;
 
     public GameObject UpgradeButton;
-    public Transform player;
+    public Transform playerPos;
     void Start()
     {
         
@@ -24,7 +25,7 @@ public class Generator : MonoBehaviour
         {
             LaunchSatellite();
         }
-        distToPlayer = Vector2.Distance(transform.position, player.position);
+        distToPlayer = Vector2.Distance(transform.position, playerPos.position);
 
         if (distToPlayer <= 3.5)
         {
@@ -34,17 +35,19 @@ public class Generator : MonoBehaviour
         {
             UpgradeButton.SetActive(false);
         }
+
+        if (distToPlayer <= 3.5 && Player.GetComponent<PlayerInventory>().IchorCount > 0)
+        {
+            takeIchor();
+        }
     }
 
     public void takeIchor()
     {
-       //check if player inventory has ichor
-       if (Ichor >= 0 && distToPlayer <= 3.5)
-        {
-            Debug.Log("taking " + Ichor + " ichor");
-            currentPower += Ichor;
-            Ichor -= Ichor;
-        }
+            Debug.Log("taking " + Player.GetComponent<PlayerInventory>().IchorCount + " ichor");
+            currentPower += Player.GetComponent<PlayerInventory>().IchorCount;
+            Player.GetComponent<PlayerInventory>().IchorCount = 0;
+        
     }
     public void LaunchSatellite()
     {
@@ -54,5 +57,6 @@ public class Generator : MonoBehaviour
 
     public void UpgradeGear()
     { 
+
     }
 }
